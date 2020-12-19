@@ -204,8 +204,9 @@ public class EditorConfigPlugin extends EditPlugin implements EBComponent
 		{
 		    BufferUpdate bu_msg = (BufferUpdate) msg;
             Buffer buf = bu_msg.getBuffer();
+            Object what = bu_msg.getWhat();
 
-		    if (bu_msg.getWhat() == BufferUpdate.LOADED || bu_msg.getWhat() == BufferUpdate.CREATED)
+		    if (what == BufferUpdate.LOADED || what == BufferUpdate.CREATED || what == BufferUpdate.SAVING || what == BufferUpdate.SAVED)
             {
                 try
                 {
